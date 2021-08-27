@@ -1,0 +1,85 @@
+{
+  "name": "@aicacia/books",
+  "version": "0.1.0",
+  "description": "aicacia books svelte",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aicacia/svelte-books"
+  },
+  "svelte": "src/index.ts",
+  "module": "esm/index.js",
+  "main": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "scripts": {
+    "doc": "typedoc",
+    "clean": "rm -rf esm",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
+    "coverage": "nyc --reporter=lcov --check-coverage --lines=75 --require ts-node/register tape src/**/*.test.{ts,tsx} | tap-spec; nyc report ---reporter=text",
+    "lint": "eslint . --fix",
+    "prettier": "prettier --ignore-path ./.eslintignore --ignore-unknown --write .",
+    "preCommit": "npm run prettier && npm run lint && npm run coverage && npm run prepublishOnly",
+    "example": "npm start -w=example",
+    "example.build": "npm run build -w=example",
+    "example.clean": "npm run clean -w=example"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run preCommit"
+    }
+  },
+  "keywords": [
+    "visual",
+    "math"
+  ],
+  "author": "Nathan Faucett",
+  "license": "(MIT OR Apache-2.0)",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "20",
+    "@rollup/plugin-node-resolve": "13",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-typescript": "8",
+    "@types/tape": "4",
+    "@typescript-eslint/eslint-plugin": "4",
+    "@typescript-eslint/parser": "4",
+    "eslint": "7",
+    "eslint-config-prettier": "8",
+    "eslint-plugin-prettier": "3",
+    "husky": "4",
+    "nyc": "15",
+    "prettier": "2",
+    "rollup-plugin-esm-import-to-url": "^2.1.0",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-svelte": "7",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "3",
+    "svelte-preprocess": "4",
+    "tap-nyc": "1",
+    "tap-spec": "5",
+    "tape": "5",
+    "ts-node": "10",
+    "typedoc": "0",
+    "typescript": "4"
+  },
+  "peerDependencies": {
+    "svelte": "3",
+    "tslib": "2"
+  },
+  "workspaces": [
+    "example"
+  ],
+  "nyc": {
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/*.test.*"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+.github/
+.nyc_output/
+.vscode/
+esm/
+example/dist/
+coverage/
+docs/
+node_modules/

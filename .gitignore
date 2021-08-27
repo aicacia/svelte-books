@@ -1,0 +1,6 @@
+.nyc_output/
+esm/
+node_modules/
+coverage/
+docs/
+npm-debug.log
