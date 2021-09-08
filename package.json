@@ -7,12 +7,12 @@
     "url": "https://github.com/aicacia/svelte-books"
   },
   "svelte": "src/index.ts",
-  "module": "esm/index.js",
   "main": "esm/index.js",
-  "types": "esm/index.d.ts",
+  "module": "esm/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "doc": "typedoc",
-    "clean": "rm -rf esm",
+    "clean": "rm -rf esm browser types",
     "build": "rollup -c",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "ts-node node_modules/.bin/tape src/**/*.test.{ts,tsx} | tap-spec",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "20",
     "@rollup/plugin-node-resolve": "13",
-    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-replace": "3",
     "@rollup/plugin-typescript": "8",
     "@types/tape": "4",
     "@typescript-eslint/eslint-plugin": "4",
@@ -50,18 +50,18 @@
     "husky": "4",
     "nyc": "15",
     "prettier": "2",
-    "rollup-plugin-esm-import-to-url": "^2.1.0",
-    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-esm-import-to-url": "2",
     "rollup-plugin-svelte": "7",
-    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-terser": "7",
     "svelte": "3",
     "svelte-preprocess": "4",
     "tap-nyc": "1",
     "tap-spec": "5",
     "tape": "5",
     "ts-node": "10",
+    "tslib": "2",
     "typedoc": "0",
-    "typescript": "4"
+    "typescript": "4.3"
   },
   "peerDependencies": {
     "svelte": "3",

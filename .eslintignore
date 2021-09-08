@@ -1,8 +1,9 @@
 .github/
 .nyc_output/
 .vscode/
-esm/
-example/dist/
 coverage/
 docs/
+browser/
+esm/
+styles/
 node_modules/

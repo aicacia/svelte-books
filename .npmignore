@@ -3,11 +3,11 @@
 .vscode/
 coverage/
 docs/
-example/
 node_modules/
 .editorconfig
 .eslintignore
 .eslintrc
 .gitignore
 npm-debug.log
+rollup.config.js
 tsconfig.json

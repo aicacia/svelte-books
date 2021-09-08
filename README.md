@@ -5,4 +5,4 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@aicacia/books)](https://www.npmjs.com/package/@aicacia/books)
 [![build](https://github.com/aicacia/svelte-books/workflows/Test/badge.svg)](https://github.com/aicacia/svelte-books/actions/workflows/test.yml)
 
-aicacia visual svelte sharable book components
+aicacia svelte sharable book components
